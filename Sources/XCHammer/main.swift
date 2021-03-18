@@ -306,7 +306,10 @@ func main() {
         if next == "-NSDocumentRevisionsDebugMode" {
             return
         }
-        if result.count == 0 && next == "YES" {
+//        if result.count == 0 && next == "YES" {
+//            return
+//        }
+        if next == "YES" {
             return
         }
         result.append(next)
