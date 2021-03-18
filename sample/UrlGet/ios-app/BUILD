@@ -214,8 +214,8 @@ objc_library(
     deps = [
         "//Vendor/GoogleAppIndexing",
         "//Vendor/GoogleAuthUtilities",
-        "//Vendor/PINCache",
-        "//Vendor/PINOperation",
+        # "//Vendor/PINCache",
+        # "//Vendor/PINOperation",
         "//ios-app/HeaderLib",
     ],
 )
