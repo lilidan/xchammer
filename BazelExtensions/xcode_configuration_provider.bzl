@@ -94,8 +94,11 @@ def _extract_generated_sources(target, ctx):
     if hasattr(target, "objc"):
         objc = target.objc
         files.append(objc.source)
-        files.append(objc.header)
         files.append(objc.module_map)
+    if hasattr(target, "CcInfo"):
+        cc_provider = target[CcInfo]
+        cc_ctx = cc_provider.compilation_context
+        files.append(cc_ctx.headers)
 
     trans_files = depset(transitive = files)
     return [f for f in trans_files.to_list()  if not f.is_source]
